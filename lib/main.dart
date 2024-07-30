@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+import 'package:ballbird/Padges/Game.dart';
 import 'package:ballbird/Padges/MainMenu.dart';
 import 'package:flutter/material.dart';
 
@@ -14,13 +16,17 @@ class Home extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'هوب هوب ياكوره',
       theme: ThemeData(
-          primarySwatch: Colors.blue,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-          scaffoldBackgroundColor: Colors.black),
-      home: Scaffold(
-        body: MainMenu(),
+        textTheme: TextTheme(labelMedium: TextStyle(color: Colors.white, fontSize: 14)),
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        scaffoldBackgroundColor: Colors.black,
+        fontFamily: 'IBM',
       ),
+      routes: {
+        '/': (context) => Game(),
+        // '/': (context) => MainMenu(),
+        '/العبه': (context) => Game(),
+        '/الاعدادات': (context) => Game(),
+      },
     );
   }
 }
-
